@@ -5,7 +5,9 @@ pipeline {
                  {
 
                     steps {
-                           sh 'mvn clean package'      
+                           sh 'mvn clean package'
+                           sh 'cd /etc/ansible'
+                           sh 'ansible-playbook deploywar.yml'      
                           }
                  }
                 }
