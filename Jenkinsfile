@@ -6,8 +6,14 @@ pipeline {
 
                     steps {
                            sh 'mvn clean package'
-                           sh 'ansible-playbook /etc/ansible/deploywar.yml -i /etc/ansible/hosts'      
                           }
                  }
+                 stage('Deploy')
+                 {
+                   steps {
+                          sh 'ansible-playbook deploywar.yml'
+                         }
+                 }
+
                 }
 }
