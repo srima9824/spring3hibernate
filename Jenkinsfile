@@ -11,7 +11,7 @@ pipeline {
                  stage('Deploy')
                  {
                    steps {
-                          sh 'ansible-playbook deploywar.yml'
+                          sh 'ansible-playbook /etc/ansible/deploywar.yml'
                          }
                  }
 
